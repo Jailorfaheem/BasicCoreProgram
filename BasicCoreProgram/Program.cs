@@ -2,33 +2,23 @@
 
 namespace BasicCoreProgramming
 {
-    class LargestNumber
+    class LeapYear
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Enter Three Numbers : ");
-            Console.Write("\nEnter Number 1 : ");
-            int num1 = Convert.ToInt32(Console.ReadLine());
+            int year;
+            Console.WriteLine("Enter the Year in Four Digits : ");
+            year = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("\nEnter Number 2 : ");
-            int num2 = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("\nEnter Number 3 : ");
-            int num3 = Convert.ToInt32(Console.ReadLine());
-
-            if (num1 > num2 && num1 > num3)
+            if (year % 4 == 0 && year % 100 == 0 || year % 400 == 0)
             {
-                Console.WriteLine("\nLargest number is : " + num1);
-            }
-            else if (num2 > num1 && num2 > num3)
-            {
-                Console.WriteLine("\nLargest number is : " + num2);
+                Console.WriteLine("{0} is a Leap Year", year);
             }
             else
             {
-                Console.WriteLine("\nLargest number is : " + num3);
+                Console.WriteLine("{0} is not a Leap Year", year);
             }
-
         }
+
     }
 }
