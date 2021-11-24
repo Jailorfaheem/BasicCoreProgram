@@ -2,22 +2,20 @@
 
 namespace BasicCoreProgramming
 {
-    class PowerOf2
+    class PrimeFactor
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number : ");
+            Console.Write("Enter your integer number :");
             int num = Convert.ToInt32(Console.ReadLine());
 
-            int i = 0;
-            int powerOfTwo = 1;
-            while (i <= num)
+            for (int i = 1; i * i <= num; i++)
             {
-                Console.WriteLine(i + " " + powerOfTwo);
-                powerOfTwo = 2 * powerOfTwo;
-                i = i + 1;
+                if (num % i == 0)
+                {
+                    Console.WriteLine(i + " is a prime factor of " + num);
+                }
             }
-
         }
     }
 }
