@@ -2,21 +2,41 @@
 
 namespace BasicCoreProgramming
 {
-    class EvenOrOdd
+    class FlipCoin
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number : ");
-            //Convert user input into integer
-            int num = Convert.ToInt32(Console.ReadLine());
+            //variable declaration
+            int result = 0;
+            int heads = 0;
+            int tails = 0;
+            double percentage1;
+            double percentage2;
 
-            if (num % 2 == 0)
+            Console.WriteLine("Enter number of timesflip a coin");
+            int num = Convert.ToInt32(Console.ReadLine()); //convert user input into integer
             {
-                Console.WriteLine("Number is Even");
-            }
-            else
-            {
-                Console.WriteLine("Number is Odd");
+
+                for (int i = 0; i < num; i++)
+                {
+                    Random random = new Random(); //Random function for flip coin
+                    result = random.Next(0, 2);
+                    if (result == 0)
+                    {
+                        heads++;
+                    }
+                    else
+                    {
+                        tails++;
+                    }
+
+                }
+                Console.WriteLine("Head was flipped {0} times", heads);
+                Console.WriteLine("Tail was flipped {0} times", tails);
+                percentage1 = ((float)heads / num) * 100;
+                percentage2 = ((float)tails / num) * 100;
+                Console.WriteLine("Percentage of Heads : " + percentage1);
+                Console.WriteLine("Percentage of tails : " + percentage2);
             }
         }
     }
